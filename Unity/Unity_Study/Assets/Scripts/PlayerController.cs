@@ -192,7 +192,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
             if (hit.collider.gameObject.tag == "Player")
             {
-                Debug.Log("hit " + hit.collider.gameObject.GetPhotonView().Owner.NickName);
+                //Debug.Log("hit " + hit.collider.gameObject.GetPhotonView().Owner.NickName);
                 PhotonNetwork.Instantiate(playerHitImpact.name, hit.point, Quaternion.identity);
 
                 hit.collider.gameObject.GetPhotonView().RPC("DealDamage",RpcTarget.All,photonView.Owner.NickName, allGuns[selectedGun].shotDamage);
@@ -226,6 +226,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [PunRPC]
     public void DealDamage(string damager,int damageAmount)
     {
+        Debug.Log("hit " + damager);
         TakeDamage(damager, damageAmount);
     }
     public void TakeDamage(string damager,int damageAmount)

@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "ObstacleAssault",
+			"Path": "F:\\git repo\\edu_capp_gameserver\\Unreal\\ObstacleAssault\\Source\\ObstacleAssault.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "ObstacleAssaultEditor",
+			"Path": "F:\\git repo\\edu_capp_gameserver\\Unreal\\ObstacleAssault\\Source\\ObstacleAssaultEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
