@@ -14,16 +14,43 @@ struct List
 	node *tail;
 	int size;
 };
+
+
+
 void initList(List* list)
 {
 	list->head = new node;
 	list->tail = new node;
+
 	list->head->next = list->tail;
 	list->head->el = -1;
 	list->tail->next = NULL;
 	list->tail->el = -1;
+
 	list->size = 0; 
 }
+
+bool is_Empty(List &list)
+{
+	if (list.size == 0)
+		return true;
+	return false;
+}
+
+int getSize(List& list)
+{
+	return list.size;
+}
+
+int getList(List* list, int r)
+{
+	node* getNode = list->head->next;
+	for (int i = 0; i < r; i++)
+		getNode = getNode->next;
+
+	return getNode->el;
+}
+
 
 void addFirst(List* list, int e)
 {
@@ -63,6 +90,14 @@ void add(List* list, int r, int e)
 	newNode->next = prevNode->next;
 	prevNode->next = newNode;
 	list->size++;
+}
+void setList(List* list, int r, int e)
+{
+	node* setNode = list->head->next;
+
+	for (int i = 0; i < r; i++)
+		setNode = setNode->next;
+	setNode->el = e;
 }
 int removeFirst(List* list)
 {
@@ -107,6 +142,7 @@ int remove(List* list, int r)
 	return delEl;
 }
 
+
 void print_list(List* list)
 {
 	node* getNode = list->head->next;
@@ -132,6 +168,7 @@ int main()
 	addFirst(&list, 8);
 	addLast(&list, 9);
 	addLast(&list, 10);
+	add(&list, 2, 40);
 	print_list(&list);
 
 }
