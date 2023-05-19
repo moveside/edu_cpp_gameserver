@@ -31,4 +31,5 @@ public:
 	void remove(int r);
 
 	void print();
+
 };
